@@ -1,0 +1,898 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #000;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px 0;
+}
+
+.hero-content {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.birthday-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 2rem;
+    animation: titleFloat 3s ease-in-out infinite;
+    line-height: 1.2;
+}
+
+.title-line {
+    display: block;
+    transform: translateY(0);
+    animation: titleFloat 3s ease-in-out infinite;
+}
+
+.title-line:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.birthday-icon {
+    font-size: clamp(3rem, 10vw, 5rem);
+    margin: 2rem 0;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    color: white;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.5s both;
+    padding: 0 10px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-icon:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.floating-icon:nth-child(2) { top: 60%; right: 15%; animation-delay: 1s; }
+.floating-icon:nth-child(3) { top: 30%; right: 20%; animation-delay: 2s; }
+.floating-icon:nth-child(4) { bottom: 30%; left: 20%; animation-delay: 3s; }
+.floating-icon:nth-child(5) { bottom: 60%; right: 10%; animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Section Styles */
+section {
+    padding: clamp(40px, 8vw, 80px) 0;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: clamp(30px, 6vw, 60px);
+    margin-top: 0;
+    padding: 0 20px;
+}
+
+.section-header h2 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    line-height: 1.2;
+}
+
+.section-header p {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    color: rgba(255,255,255,0.9);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* Video Section */
+.video-section {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transform: perspective(1000px) rotateX(5deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0 20px;
+}
+
+.video-container:hover {
+    transform: perspective(1000px) rotateX(0deg) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: clamp(250px, 50vw, 450px);
+    border: none;
+    border-radius: 20px;
+}
+
+/* Image Section */
+.image-section {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.image-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.birthday-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.birthday-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.birthday-image img {
+    width: 100%;
+    height: clamp(300px, 60vw, 600px);
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.birthday-image:hover .image-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    text-align: center;
+    color: white;
+}
+
+.overlay-content i {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 1rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.overlay-content p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 600;
+}
+
+/* Letter Section */
+.letter-section {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.letter-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+.letter-container {
+    background: white;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: clamp(20px, 5vw, 40px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.letter-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #dda0dd, #98d8c8);
+    border-radius: 22px;
+    z-index: -1;
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.letter-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.letter-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border-radius: 2px;
+}
+
+.letter-icon {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 15px;
+    animation: letterFloat 3s ease-in-out infinite;
+}
+
+@keyframes letterFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.letter-header h3 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    color: #000;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Letter Content */
+.letter-content {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    line-height: 1.8;
+    color: #000;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.letter-content p {
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 20px;
+    text-align: justify;
+}
+
+.letter-content p:not(.letter-intro)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border-radius: 50%;
+}
+
+.letter-intro {
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-weight: 600;
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.letter-intro::before {
+    content: '🎂';
+    margin-right: 10px;
+}
+
+.letter-content strong {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.letter-content em {
+    color: #000;
+    font-style: italic;
+}
+
+.letter-line {
+  margin-bottom: 1.5em;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  line-height: 1.8;
+  color: #000;
+  text-align: justify;
+}
+
+/* Letter Footer */
+.letter-footer {
+    text-align: right;
+    padding-top: 30px;
+    border-top: 2px solid #f0f0f0;
+    position: relative;
+}
+
+.letter-footer::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
+}
+
+.signature {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 5px;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
+.author {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-weight: 600;
+    color: #e74c3c;
+    margin: 0;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+        padding: 0 30px;
+    }
+    
+    .letter-container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 900px;
+        padding: 0 25px;
+    }
+    
+    .hero {
+        padding: 40px 0;
+    }
+    
+    .floating-icon {
+        font-size: 1.8rem;
+    }
+    
+    .floating-icon:nth-child(1) { top: 15%; left: 8%; }
+    .floating-icon:nth-child(2) { top: 55%; right: 12%; }
+    .floating-icon:nth-child(3) { top: 25%; right: 18%; }
+    .floating-icon:nth-child(4) { bottom: 25%; left: 18%; }
+    .floating-icon:nth-child(5) { bottom: 55%; right: 8%; }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .hero {
+        padding: 30px 0;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+    }
+    
+    .birthday-title {
+        margin-bottom: 1.5rem;
+    }
+    
+    .birthday-icon {
+        margin: 1.5rem 0;
+    }
+    
+    .hero-subtitle {
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-header {
+        margin-bottom: 40px;
+    }
+    
+    .video-container {
+        padding: 0 15px;
+    }
+    
+    .image-container {
+        padding: 0 15px;
+    }
+    
+    .floating-icon {
+        font-size: 1.5rem;
+    }
+    
+    .floating-icon:nth-child(1) { top: 10%; left: 5%; }
+    .floating-icon:nth-child(2) { top: 50%; right: 8%; }
+    .floating-icon:nth-child(3) { top: 20%; right: 15%; }
+    .floating-icon:nth-child(4) { bottom: 20%; left: 15%; }
+    .floating-icon:nth-child(5) { bottom: 50%; right: 5%; }
+    
+    .letter-container {
+        max-width: 95%;
+        padding: 25px 15px;
+    }
+    
+    .letter-content p {
+        padding-left: 15px;
+    }
+    
+    .letter-content p:not(.letter-intro)::before {
+        left: 0;
+        top: 10px;
+        width: 5px;
+        height: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 20px 0;
+        min-height: 90vh;
+    }
+    
+    .hero-content {
+        padding: 0 10px;
+    }
+    
+    .birthday-title {
+        margin-bottom: 1rem;
+    }
+    
+    .birthday-icon {
+        margin: 1rem 0;
+    }
+    
+    .hero-subtitle {
+        margin-bottom: 1rem;
+        padding: 0 5px;
+    }
+    
+    section {
+        padding: 40px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+    
+    .section-header p {
+        padding: 0 5px;
+    }
+    
+    .video-container {
+        padding: 0 10px;
+    }
+    
+    .image-container {
+        padding: 0 10px;
+    }
+    
+    .floating-icon {
+        font-size: 1.2rem;
+    }
+    
+    .floating-icon:nth-child(1) { top: 8%; left: 3%; }
+    .floating-icon:nth-child(2) { top: 45%; right: 5%; }
+    .floating-icon:nth-child(3) { top: 15%; right: 12%; }
+    .floating-icon:nth-child(4) { bottom: 15%; left: 12%; }
+    .floating-icon:nth-child(5) { bottom: 45%; right: 3%; }
+    
+    .letter-container {
+        max-width: 98%;
+        padding: 20px 10px;
+        border-radius: 15px;
+    }
+    
+    .letter-container::before {
+        border-radius: 17px;
+    }
+    
+    .letter-header {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .letter-content {
+        margin-bottom: 30px;
+    }
+    
+    .letter-content p {
+        padding-left: 12px;
+        margin-bottom: 1rem;
+    }
+    
+    .letter-content p:not(.letter-intro)::before {
+        left: 0;
+        top: 8px;
+        width: 4px;
+        height: 4px;
+    }
+    
+    .letter-footer {
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .hero {
+        padding: 15px 0;
+        min-height: 85vh;
+    }
+    
+    .hero-content {
+        padding: 0 5px;
+    }
+    
+    .birthday-title {
+        margin-bottom: 0.8rem;
+    }
+    
+    .birthday-icon {
+        margin: 0.8rem 0;
+    }
+    
+    .hero-subtitle {
+        margin-bottom: 0.8rem;
+        padding: 0 2px;
+    }
+    
+    section {
+        padding: 30px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 25px;
+        padding: 0 5px;
+    }
+    
+    .section-header p {
+        padding: 0 2px;
+    }
+    
+    .video-container {
+        padding: 0 5px;
+    }
+    
+    .image-container {
+        padding: 0 5px;
+    }
+    
+    .floating-icon {
+        font-size: 1rem;
+    }
+    
+    .floating-icon:nth-child(1) { top: 5%; left: 2%; }
+    .floating-icon:nth-child(2) { top: 40%; right: 3%; }
+    .floating-icon:nth-child(3) { top: 10%; right: 8%; }
+    .floating-icon:nth-child(4) { bottom: 10%; left: 8%; }
+    .floating-icon:nth-child(5) { bottom: 40%; right: 2%; }
+    
+    .letter-container {
+        max-width: 99%;
+        padding: 15px 8px;
+        border-radius: 12px;
+    }
+    
+    .letter-container::before {
+        border-radius: 14px;
+    }
+    
+    .letter-header {
+        margin-bottom: 15px;
+        padding-bottom: 12px;
+    }
+    
+    .letter-content {
+        margin-bottom: 25px;
+    }
+    
+    .letter-content p {
+        padding-left: 10px;
+        margin-bottom: 0.8rem;
+    }
+    
+    .letter-content p:not(.letter-intro)::before {
+        left: 0;
+        top: 6px;
+        width: 3px;
+        height: 3px;
+    }
+    
+    .letter-footer {
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 0 8px;
+    }
+    
+    .hero {
+        padding: 10px 0;
+        min-height: 80vh;
+    }
+    
+    .hero-content {
+        padding: 0 3px;
+    }
+    
+    .birthday-title {
+        margin-bottom: 0.6rem;
+    }
+    
+    .birthday-icon {
+        margin: 0.6rem 0;
+    }
+    
+    .hero-subtitle {
+        margin-bottom: 0.6rem;
+        padding: 0 1px;
+    }
+    
+    section {
+        padding: 25px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 20px;
+        padding: 0 3px;
+    }
+    
+    .section-header p {
+        padding: 0 1px;
+    }
+    
+    .video-container {
+        padding: 0 3px;
+    }
+    
+    .image-container {
+        padding: 0 3px;
+    }
+    
+    .floating-icon {
+        font-size: 0.8rem;
+    }
+    
+    .floating-icon:nth-child(1) { top: 3%; left: 1%; }
+    .floating-icon:nth-child(2) { top: 35%; right: 2%; }
+    .floating-icon:nth-child(3) { top: 8%; right: 5%; }
+    .floating-icon:nth-child(4) { bottom: 8%; left: 5%; }
+    .floating-icon:nth-child(5) { bottom: 35%; right: 1%; }
+    
+    .letter-container {
+        max-width: 100%;
+        padding: 12px 6px;
+        border-radius: 10px;
+    }
+    
+    .letter-container::before {
+        border-radius: 12px;
+    }
+    
+    .letter-header {
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+    
+    .letter-content {
+        margin-bottom: 20px;
+    }
+    
+    .letter-content p {
+        padding-left: 8px;
+        margin-bottom: 0.6rem;
+    }
+    
+    .letter-content p:not(.letter-intro)::before {
+        left: 0;
+        top: 5px;
+        width: 2px;
+        height: 2px;
+    }
+    
+    .letter-footer {
+        padding-top: 12px;
+    }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding: 10px 0;
+    }
+    
+    .birthday-title {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        margin-bottom: 0.5rem;
+    }
+    
+    .birthday-icon {
+        font-size: clamp(2rem, 8vw, 3rem);
+        margin: 0.5rem 0;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+        margin-bottom: 0.5rem;
+    }
+    
+    .floating-icon {
+        font-size: 1rem;
+    }
+    
+    section {
+        padding: 20px 0;
+    }
+    
+    .letter-section {
+        min-height: auto;
+        padding: 20px 0;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .birthday-image img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .floating-elements {
+        display: none;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .letter-container {
+        background: #1a1a1a;
+        color: #ffffff;
+    }
+    
+    .letter-header h3,
+    .letter-content,
+    .letter-line {
+        color: #ffffff;
+    }
+    
+    .letter-content em {
+        color: #ffffff;
+    }
+    
+    .letter-footer {
+        border-top-color: #333;
+    }
+    
+    .signature {
+        color: #aaa;
+    }
+} 
