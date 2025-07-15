@@ -251,7 +251,6 @@ const observer = new IntersectionObserver((entries) => {
             // Add special effect for letter section
             if (entry.target.classList.contains('letter-section')) {
                 addSparkles();
-                setTimeout(typewriterEffect, 500);
             }
         }
     });
